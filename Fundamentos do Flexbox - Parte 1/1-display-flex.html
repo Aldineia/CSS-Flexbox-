@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - Flex Wrap</title>
+
+    <style>
+        main{
+            max-width: 900px;
+            padding: 20px;
+            margin: 0;
+            background: rgb(211, 241, 211);
+        }
+
+        h2{
+            color: rgb(6, 6, 146);
+        }
+    
+        #titulo{
+            color: rgb(6, 6, 146);
+            text-align: center;
+            
+        } 
+        
+        .flex-container{
+            display: flex;
+            border: 2px solid black;
+            max-width: 300px;
+            height: 150px;
+        }
+
+        .item{
+            font-size: 24px;
+            height: 50%;
+            text-align: center;
+            min-width: 100px;
+            line-height: 50px;
+        }
+
+        .blue{
+            background: blue;
+        }
+
+        .green{
+            background: green;
+        }
+
+        .orange{
+            background: orange
+        }
+        .nowrap{
+            flex-wrap: nowrap;
+        }
+        .wrap{
+            flex-wrap: wrap;
+        }
+        .wrapreverse{
+            flex-wrap: wrap-reverse;
+        }
+        .pink{
+            background:pink;
+        }
+        .red{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="titulo">Fundamentos - Flex Wrap</h1>
+
+<main class="inicio">
+    <section>
+    <h2>Flex Wrap</h2>
+    <p>É uma propriedade que define se os itens devem ou não quebrar a linha.<br> Por padrão eles não quebram linhas, isso faz com que os flex-items sejam compactados além do limite do conteúdo.</p>
+    
+    <h2>no wrap</h2>
+    <p>É o padrão, não perminte a quebra de linha.</p>
+    </section>
+
+    <div class="flex-container">
+        <div class="item orange">1</div>
+        <div class="item blue">2</div>
+        <div class="item green">3</div>
+        <div class="item pink">4</div>
+    </div>
+    
+    <section>
+    <h2>wrap</h2>
+    <p>Permite a quebra de linha assim que um dos flex itens não puder mais ser comportados.</p>
+    </section>
+
+    <div class="flex-container wrap">
+        <div class="item green">1</div>
+        <div class="item blue">2</div>
+        <div class="item pink">3</div>
+        <div class="item orange">4</div>
+    </div>
+
+    <section>
+    <h2>wrap-reverse</h2>
+    <p>Permite a quebra de linha em direção contrária da linha acima.</p>
+    </section>
+
+    <div class="flex-container wrapreverse">
+        <div class="item green">1</div>
+        <div class="item blue">2</div>
+        <div class="item pink">3</div>
+        <div class="item orange">4</div>
+    </div>
+</main>
+
+</body>
+</html>

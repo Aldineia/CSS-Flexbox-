@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos FLEX-FLOW</title>
+    <style>
+        
+        main{
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            background: rgb(214, 213, 213);
+        }
+        h1{
+            text-align: center;
+            color:rgb(5, 16, 122);
+        }
+        h2, b{
+            color: rgb(5, 16, 122);
+            
+        }
+        
+        p, li{
+            font-style: normal;
+            font-size: 18px;
+            
+        }
+    
+        .flex-container{
+            display:flex;
+            border: 1px solid black;
+            max-width: 500px;
+            margin-bottom: 10px;
+            height: 200px;
+            background: rgb(209, 235, 241);
+            
+        }
+        .default{
+            flex-flow: row nowrap;
+        }
+
+        .wrap{
+            flex-flow: row wrap;
+        }
+
+        .wrap-reverse{
+            flex-flow: wrap-reverse;
+        }
+        .r-nowrap{
+            flex-flow: row-reverse nowrap;
+        }
+        .r-wrap{
+            flex-flow:  row-reverse wrap;
+        }
+        .rr-wrap{
+            flex-flow: row-reverse wrap-reverse;
+        }
+        .item{
+            background: rgb(188, 134, 238);
+            margin: 5px;
+            color: white;
+            height: 50px;
+            width:100px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<main>
+    <h1>Fundamentos Flex-Flow</h1>
+    <section>
+    <h2>default:row nowrap</h2>
+    <p> <b>row:</b> Organiza os elementos filhos em ums linha horizontal, da esquerda para a direita.</p>
+    <p><b>nowrap:</b>  Força todos os elementos a ficarem nessa mesma linha. Se não couberem na tela, eles encolhem em vez de quebrar para a linha debaixo.</p>
+
+    <div class="flex-container default">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2>wrap</h2>
+<p>
+    <b>wrap:</b> Permite que os itens flexíveis que não cabem na mesma linha sejam movidos para a linha seguinte.
+</p>
+
+    <div class="flex-container wrap">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2>wrap-reverse</h2>
+<p>
+<b>wrap-reverse:</b>Permite a quebra de linha, mas as novas linhas são posicionadas na direção oposta à padrão.</p>
+
+
+<div class="flex-container wrap-reverse">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2>row-reverse nowrap</h2>
+
+<p><b>row-reverse: </b>O eixo principal permanece horizontal. No entanto, o ponto de partida se inverte.</p>
+<p><b>nowrap:</b> Isso força todos os itens flexíveis a ficarem em uma única linha, impedindo que quebrem para uma nova linha.</p>
+
+
+<div class="flex-container r-nowrap">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2>row-reverse wrap</h2>
+<p><b>row-reverse:</b>Os itens são alinhados na horizontal, mas invertidos. o primeiro item vai para a extremidade direita, e os demais seguem para a esquerda na ordem em que foram declarados.</p>
+<p><b>wrap:</b> Quando a tela ou contêiner for redimensionado e não houver mais espaço na linha horizonal, os elementos que sobrarem passarão para a linha debaixo, formando uma estrutura responsiva.</p>
+
+
+<div class="flex-container r-wrap">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2>row-reverse wrap-reverse</h2>
+<p>
+    <b>row-reverse:</b> Os itens são exibidos da direita para a esquerda.
+</p>
+<p>
+    <b>wrap-reverse:</b> Quando ocorre quebra de linha, as novas linhas aparecem acima da linha principal, inverte a direção padrão do empilhamento.</p>
+</p>
+
+<div class="flex-container rr-wrap">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+</div>
+</div>
+</section>
+
+<section>
+
+    <h2>RESUMO</h2>
+    <div class="flex-container">
+    <ul>
+        <li><b>row nowrap =></b> Linha horizontal sem quebra;</li>
+        <li><b>row wrap =></b> Linha horizontal com quebra;</li>
+        <li><b>row wrap-reverse =></b> Quebra invertida;</li>
+        <li><b>row-reverse nowrap =></b> Linha invertida com quebra;</li>
+        <li><b>row-reverse wrap-reverse =></b> Linha invertida e quebra invertida.</li>
+    </ul>
+</div>
+</div>
+</section>
+</main>
+</body>
+</html>

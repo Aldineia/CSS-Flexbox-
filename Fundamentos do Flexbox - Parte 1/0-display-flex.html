@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fundamentos - Display Flex</title>
+
+        <style>
+            main{
+                max-width: 900px;
+                margin: auto;
+                padding: 30px;
+                background: rgb(223, 219, 219);
+            }
+            .flex{
+                max-width: 300px;
+                padding: 10px;
+                border: 2px solid rgb(248, 106, 205);
+                display: flex; /*Transforma o elemento em um contêiner flexível e seus filhos diretos em itens flexíveis */
+            }
+
+            .item{
+                background-color: rgb(209, 199, 245);
+                margin: 5px;
+            }
+
+            .flex-container{
+                margin: 0;
+                padding: 0;
+                display: flex;
+                list-style: none;
+                max-width: 500px;
+            } 
+            .flex-item{
+                background: rgb(10, 127, 143);
+                height: 50px;
+                width: 50px;
+                line-height: 50px;
+                font-size: 20px;
+                color: white;
+                text-align: center;
+                margin: 5px;
+            }
+
+            .row{
+                flex-direction: row;
+            }
+
+            .row-reverse{
+                flex-direction: row-reverse;
+            }
+
+            .text-row-reverse{
+                text-align: right;
+            }
+            .row-reverse li{
+                background: red;
+            }
+            .column{
+                float: left;
+                flex-direction: column;
+            }
+
+            .column li{
+                background: orange;
+            }
+
+            .column-reverse{
+                float: right;
+                flex-direction: column-reverse;
+            }
+
+            .column-reverse li{
+                background:pink;
+            }
+        </style>
+    </head>
+
+    <main>
+
+    <section>
+    <h1> CSS FlexBox</h1>
+    <p>É um modelo de layout unidimencional projetado para distribuir espaço e alinhar itens em uma interface de forma responsiva. Ele  organiza os elementos através da relação entre um Flex Container (elemento pai)   e seus Flex items (elementos filhos).</p>
+    </section>
+
+        <section>
+        <h2>1. Flex Container e Propriedades Principais</h2>
+        <p>O Flex Container é a tag que envolve todos os itens, tornando-os  flexíveis ao aplicar a propriedade display: flex.</p>
+        <!--div .item*3   atalho autocompletar estruturas-->
+        </section>
+
+        <div class="flex">   <!--Declaração padrão de um FLexBox transformando a div em um contêiner flexível-->
+            <div class="item">item 1</div>
+            <div class="item">item 2</div>
+            <div class="item">item 3</div>
+        </div>
+
+        <p>Propriedades relacionados:</p>
+            <ul>
+                <li><b>Display:</b> inicia o comportamento do container.</li>
+                <li><b>Flex-direction:</b> direciona os itens em linha e coluna.</li>
+                <li><b>Flex-wrap:</b> Controla a quebra de linha dos itens.</li>
+                <li><b>Flex-flow:</b> abreviação para direction e wrap.</li>
+                <li><b>Justify-content:</b> alinhar os itens ao longo do eixo principal.</li>
+                <li><b>Align-items:</b> alinha os itens ao longo do eixo transversal. </li>
+                <li><b>Align-content:</b> alinha as linhas de itens quando há quebra.</li>
+            </ul>
+
+        <section>
+        <h2>2. Flex Item</h2>
+        <p>Os Flex Items são os elementos filhos diretos do Flex Container. Eles são redimenionáveis  e adaptam-se dinamicamente ao espaço disponível.</p>
+        </section>
+
+        <div class="flex">
+            <div class="item">Flex item 1</div>
+            <div class="item">Flex item 2</div>
+            <div class="item">Flex item 3</div>
+        </div>
+
+        <p>Propriedades relacionadas:
+            <ul>
+                <li><b>Flex-grow:</b> Define a proporção de crescimento do item.</li>
+                <li><b>Flex-basis:</b> Define o tamanho inicial do item antes da distribuição de espaço.</li>
+                <li><b>Flex-shrink:</b> Define a proporção de redução do item se necessário.</li>
+                <li><b>Flex:</b> Abreviação grow, basis e shrinkk. </li>
+                <li><b>Order:</b> Altera a ordem visual de distribuição dos itens.</li>
+                <li><b>Align-self:</b> Permite alinhar um item específico de forma independente, sobrescrevendo o align-items do container.</li>
+            </ul>
+        </p>
+        
+        <section>
+        <h2>3. Display Flex</h2>
+        <p>Torna a tag um elemento do tipo flex container, e assim automaticamente todas os filhos diretos desta tag, torna-se em flex items.</p>
+        </section>
+
+        <div class="flex">
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+        </div>
+
+        <br>
+
+        <div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>            
+        </div>
+    
+        <br>
+
+        <section>
+        <h2>4. Flex-Direction</h2>
+        <p>A Propriedade flex-direction estabelece o eixo principal do container, definindo a direção exata que os itens são posicionados.</p>
+        <h3> Os eixos:</h3>
+
+        <p> <b>row =></b> Direção padrão do texto (da esquerda para direita).</p>
+        </section>
+
+        <ul class="flex-container">
+            <li class="flex-item">1</li>
+            <li class="flex-item">2</li>
+            <li class="flex-item">3</li>
+            <li class="flex-item">4</li>
+        </ul>
+
+        <p><b>row-reverse =></b> Sentido oposto ao da direção padrão.</p>
+
+        <ul class="flex-container row-reverse">
+            <li class="flex-item">1</li>
+            <li class="flex-item">2</li>
+            <li class="flex-item">3</li>
+            <li class="flex-item">4</li>
+        </ul>
+
+        <p><b>column =></b>Posiciona os itens em uma única coluna (de cima para baixo).</p>
+
+        <ul class="flex-container column">
+            <li class="flex-item">1</li>
+            <li class="flex-item">2</li>
+            <li class="flex-item">3</li>
+            <li class="flex-item">4</li>
+        </ul>
+
+        <p class="text-row-reverse"><b>column-reverse =></b>Posiciona os itens em coluna, de baixo para cima.</p>
+        <ul class="flex-container column-reverse">
+            <li class="flex-item">1</li>
+            <li class="flex-item">2</li>
+            <li class="flex-item">3</li>
+            <li class="flex-item">4</li>
+        </ul>
+        </section>
+    </body>
+</main>
+</html>
