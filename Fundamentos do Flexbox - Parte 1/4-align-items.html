@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="br-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - align items</title>
+    <style>
+    
+        main{
+            background: rgb(177, 225, 247);
+            max-width: 900px;
+            padding: 20px;
+            margin: 0;
+        }
+        h1, h2{
+            text-align: center;
+        }
+        .container{
+            max-width: 350px;
+            border: 1px solid black ;
+            display: flex;
+        }
+        .item{
+            background-color: rgb(173, 172, 173);
+            margin: 5px;
+            color: rgb(20, 20, 20);
+            text-align: center;
+            flex: 1;
+        }
+        .center{
+            align-items: center;
+        }
+        .stretch{
+            align-items: stretch;
+        }
+        .start{
+            align-items: flex-start;
+        }
+        .end{
+            align-items: end;
+        }
+        .baseline{
+            align-items: baseline;
+        }
+        .column{
+            flex-direction: column;
+        }
+    </style>
+</head>
+<main>
+    <section>
+        <h1>Fundamentos de align-items</h1>
+        <p></p>
+    </section>
+
+    <h2>Row</h2>
+
+    <h3>Center</h3>
+    <p>Alinha os itens ao centro do contêiner.</p>
+    <section class="container center">
+        <div class="item">Item 1.</div>
+        <div class="item">Item 2 texto align items.</div>
+        <div class="item">Item 3 adição de texto para teste de align items.</div>
+    </section>
+
+    <h3>Stretch</h3>
+    <p>Valor padrão. Todos os itens crescem igualmente para preencher toda s altura do contêiner flexível.</p>
+    <section class="container stretch">
+        <div class="item">Item 1.</div>
+        <div class="item">Item 2 com texto "aling items"...Item 2 com texto "aling items".</div>
+        <div class="item">Item 3 adição de texto para teste de align items .</div>
+    </section>
+
+    <h3>Flex-start</h3>
+    <p>Alinha os itens na margem esquerda do contêiner, no início da coluna. </p>
+    <section class="container start">
+        <div class="item">Item 1.</div>
+        <div class="item">Item 2  texto "align items"</div>
+        <div class="item">Item 3 adição de texto para teste de "aling items".</div>
+    </section>
+
+    <h3>Flex-end</h3>
+    <p>Alinha os itens no final (parte inferior do contêiner).</p>
+    <section class="container end">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2 texto "align items"</div>
+        <div class="item">Item 3 adição de texto para teste de align items.</div>
+    </section>
+
+    <h3>Baseline</h3>
+    <p>Alinha os itens de acordo com a linha base da tipografia( o alinhamento ocorre pela base do texto).</p>
+    <section class="container baseline">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2  texto "align items".</div>
+        <div class="item">Item 3 adição de texto para teste de aling items.</div>
+    </section>
+
+    <h2>Column</h2>
+<p>Quando a direção flexivél é definida como column:</p>
+    <h3>Flex-start (column)</h3>
+    <p>Alinha os itens na margem esquerda do contêiner, no início da coluna.</p>
+    <section class="container start column">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2 com texto "align items".</div>
+        <div class="item">Item 3 adição de texto para teste de align item.</div>
+    </section>
+
+    <h3>Flex-end (column)</h3>
+    <p>Alinha os itens no lado final da coluna.</p>
+    <section class="container end column">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2 com texto "align items".</div>
+        <div class="item">Item 3 adição de texto para teste de align items.</div>
+    </section>
+
+    <h3>Center (column)</h3>
+    <p>Centraliza horizontalmente todos os itens dentro da coluna.</p>
+    <section class="container center column">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2 texto "align items".</div>
+        <div class="item">Item 3 adição de texto para teste de align items.</div>
+    </section>
+
+    <h3>baseline (column)</h3>
+    <p>Alinha os itens de acordo com a linha base do texto contido nos elementos.</p>
+    <section class="container baseline column">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2 com texto "align line".</div>
+        <div class="item">Item 3 adição de texto para teste de align items.</div>
+    </section>
+
+    <h3>Stretch column</h3>
+    <p>Estica os itens horizontalmente para ocuparem toda a largura do contêiner.</p>
+    <section class="container stretch column">
+        <div class="item">Item 1 </div>
+        <div class="item">Item 2 com texto "align items"</div>
+        <div class="item">Item 3 adição de texto para teste de align items.</div>
+    </section>
+</main>
+</body>
+</html>

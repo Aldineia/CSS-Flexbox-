@@ -5,26 +5,192 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundamentos - justify-content</title>
     <style>
+        h1, h2{
+            text-align: center;
+        }
+    
+        main{
+            background: rgb(248, 222, 237);
+            margin: auto;
+            padding: 30px;
+            max-width: 900px;
+        }
         .container{
-            max-width: 600px;
-            border: 1px solid black;
+            max-width: 900PX;
+            border: 1px solid rgb(20, 20, 20);
             margin: 0;
             display: flex;
+            background: rgb(243, 228, 203);
         }
         .item{
-            background-color: blueviolet;
+            background-color: rgb(176, 174, 177);
             margin: 5px;
             text-align:center;
-            color:white;
+            color:rgb(16, 3, 131);
         }
-
+        .flex-start{
+            justify-content: flex-start;
+        }
+        .flex-end{
+            justify-content: flex-end;
+        }
+        .center{
+            justify-content:center;
+        }
+        .space-between{
+            justify-content:space-between;
+        }
+        .space-around{
+            justify-content: space-around;
+        }
+        .space-evenly{
+            justify-content:space-evenly;
+        }
+        .column{
+            flex-direction:column;
+            min-height:200px;
+        }
+        .container.resume{
+            flex-direction:column;
+            background: rgb(189, 197, 245);
+            border: 1px solid rgb(20, 20, 20);
+            padding: 10px;
+        }
+        .resumo{
+            text-align:center;
+        }
     </style>
 </head>
 <body>
-    <section class="container">
-        <div class="item">Item 1</div>
+    <header>
+        <h1>Fundamentos do Flexbox </h1>
+    </header>
+    <main>
+        <h2>Justify-content</h2>
+        <p>A propriedade justify-content define como o navegador distribui o espaço entre e ao redor dos itens flexíveis so longo do eixo principal (main axis). Ela é ignorada se os itens já  ocuparem todo o espaço disponivel.</p>
+
+        <h2>Row</h2>
+
+    <h3>Flex-start</h3>
+    <p>Alinha os itens no  início do container.</p>
+    <section class="container flex-start">
+        <div class="item">1</div>
         <div class="item">Item 2</div>
-        <div class="item">Item 3</div>
+        <div class="item">Outro item 3</div>
     </section>
+
+    <h3>Flex-end</h3>
+    <p>Alinha os itens  no final do container.</p>
+    <section class="container flex-end">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item 3</div>
+    </section>
+
+    <h3>Center</h3>
+    <p>Centraliza todos os itens no meio do container.</p>
+        <section class="container center">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item 3</div>
+    </section>
+
+    <h3>Space-between</h3>
+    <p>Cria espaçamento igual entre os elementos, mantendo o primeiro item colado no início e o último no final</p>
+    <section class="container space-between">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item 3</div>
+    </section>
+
+    <h3>Space-around</h3>
+    <p>Distribui os itens com espaçamento uniforme; note que o espaço entre os elementos do meio é o dobro do espaçamento nas extremidades.</p> 
+    <section class="container space-around">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item 3</div>
+    </section>
+
+    <h3>Space-evenly</h3>
+    <p>Distribui os itens para que o espaço entre eles e as bordas do container seja exatamente igual.</p>
+    <section class="container space-evenly">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item 3</div>
+    </section>
+
+    <h3>Resumo:</h3>
+        <div class="container resume">
+        <ul>
+            <li><b>Flex-start:</b> Alinha os itens no  início do container.</li>
+            <li><b>Flex-end:</b> Alinha os itens  no final do container.</li>
+            <li><b>Center:</b> Centraliza todos os itens no meio do container.</li>
+            <li><b>Space-between:</b> Cria espaçamento igual entre os elementos, mantendo o primeiro item colado no início e o último no final</li>
+            <li><b>Space-around:</b> Distribui os itens com espaçamento uniforme; note que o espaço entre os elementos do meio é o dobro do espaçamento nas extremidades.</li>
+            <li><b>Space-evenly:</b> Distribui os itens para que o espaço entre eles e as bordas do container seja exatamente igual.</li>
+        </ul>
+    </div>
+
+    <h2>Column</h2>
+
+    <h3>Flex-start (column)</h3>
+    <p>Itens alinhados no topo do container.</p>
+    <section class="container flex-start column">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item 3</div>
+    </section>
+
+    <h3>Flex-end (column)</h3>
+    <p>Itens alinhados na base do container.</p>
+    <section class="container flex-end column">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item 3</div>
+    </section>
+
+    <h3>Center (column)</h3>
+    <p>Itens centralizados verticalmente no container.</p>
+    <section class="container center column">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item 3</div>
+    </section>
+
+    <h3>Space-between (column)</h3>
+    <p>Distribuição vertical com o primeiro item no topo e o último na base.</p>
+    <section class="container space-between column">
+        <div class="item">1 </div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item 3</div>
+    </section>
+
+    <h3>Space-around (column)</h3>
+    <p>Espaçamento vertical uniforme, com as bordas possuindo metade do espaço entre os itens.</p>
+    <section class="container space-around column">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item 3</div>
+    </section>
+
+    <h3>Space-evenly (column)</h3>
+    <p>Espaçamento vertical perfeitamente igual entre todos os itens e as bordas.</p>
+    <section class="container space-evenly column">
+        <div class="item">1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Outro item 3</div>
+    </section>
+
+    <h3>Resumo (column):</h3>
+    <div class="container resume">
+        <ul>
+            <li><b>Flex-start:</b> Alinha os itens no topo do container.</li>
+            <li><b>Flex-end:</b> Alinha os itens na base do container.</li>
+            <li><b>Center:</b> Itens centralizados verticalmente no container.</li>
+            <li><b>Space-between:</b> Distribuição vertical com o primeiro item no topo e o último na base.</li>
+            <li><b>Space-around:</b> Espaçamento vertical uniforme, com as bordas possuindo metade do espaço entre os itens.</li>
+            <li><b>Space-evenly:</b> Espaçamento vertical perfeitamente igual entre todos os itens e as bordas. </li>
+        </ul>
+    </div>
 </body>
 </html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Flex-shrink</title>
+    <style>
+        .flex-container{ /*Define o container como flexível*/
+            display:flex; /*Define o container como flexível*/
+            border: 1px solid black; /*Adicionar uma borda para visualizar o container*/
+            max-width: 500px; /*Define a largura máxima do container*/
+            width:100%; /*Define a largura do container como 100% da largura disponível*/
+            margin-left:auto; /*Centaliza o container horizontalmente*/
+            margin-right:auto; /*Centraliza o container horizontalmente*/
+            margin-bottom:25px; /*Define a margem inferior do container*/
+        }
+        .item{/*Define o item como flexível*/
+            background-color: orangered; /*Define a cor de fundo do item*/
+            color:rgb(243, 245, 245);/*Define a cor do texto do item*/
+            text-align:center; /* Alinha o texto ao centro do item*/
+            margin: 5px; /*Defini a margem do item*/
+        }
+        
+        main{/*Define o elemento principal da página*/
+            background: rgb(247, 229, 229); /*Cor de fundo do elemento principal*/
+            padding:20px; /*Espaço entre a borda e seu conteúdo (texto, flexbox, etc.)*/
+            margin: 15px; /* Espaço Fora da borda (afasta do topo da página e das laterais)*/
+            border: 1px solid #131212;/*Opicinoal: adiciona uma borda visível para efeito*/
+        }
+
+        h1,h2,h3,p, .item{ /*Define a formataçõa do texto*/
+            font-family: Arial, Helvetica, sans-serif; /*Define a fonte do texto*/
+            text-align:center;/*Alinha o texto ao centro*/
+        }
+        p{
+            max-width: 600px; /*Define a largura máxima do paragrafo*/
+            margin-left: auto; /*Centraliza o paragrafo horizontalmente*/
+            margin-right:auto; /*Centraliza o paragrafo horizontalmente*/
+            font-size: 14px; /* Define o tamanho da fonte do paragrafo*/
+            color:#131212; /*Define a cor do texto do paragrafo*/
+            line-height: 1.4; /*Define a altura da linha do paragrafo*/
+            
+        }
+        .explicacao{ 
+            background-color:rgb(248, 231, 209); /*Define a cor de fundo do paragrafo explicação*/
+            border-left: 4px solid rgb(156, 128, 3); /*Define a bordar esquerda do paragrafo explicação*/
+            padding: 10px; /*Define o espaçamento interno do paragrafo explicação*/
+            margin-bottom: 10px; /*Define a margem inferior do paragrafo explicação*/
+            text-align:left; /*Alinha o texto do paragrafo explicação a esquerda*/
+        }
+        .s-1{
+            flex-shrink:1; /*Define a capacidade de redução do item*/
+        }
+        .fg-1{
+            flex-grow: 1; /*Define a capacidade de crescimento do item*/
+        }
+        .s-0{
+            flex-shrink:0; /* Define a capacidade de redução do item*/
+            flex-basis:100px; /*Define o tamanho inicial do item*/
+        }
+        .s-2{
+            flex-shrink:2;/*Define a capacidade de redução do item*/
+            flex-basis: 100px;
+        }
+        .s-3{
+            flex-shrink:3;
+            flex-basis: 100px;
+        }
+    </style> <!-- Define o estilo do container flexível e dos itens flexíveis -->
+</head>
+<body>
+    <h1>Fundamentos Flexbox - Parte 2</h1>
+    <main>
+        <h2>Fundamentos Flex-shrink</h2>
+        <p class="texto">É a propriedade que estabelece a capacidade de redução ou compressão do tamanho de um item.</p>
+
+        <h3>Examplo de Flex-shrink: 1</h3>
+        <p class="explicacao">Neste exemplo, todos os itens possuem a mesma capacidade de redução (flex- shrink:1) e a mesma capacidade de crescimento (flex-grow:1). Quando o container flexível é reduzido, todos os itens se comprimem igualmente, mantendo sua proporção de tamanho.</p>
+        <div class="flex-container"> 
+            <div class="item s-1 fg-1">A</div> <!-- Define a capacidade de redução do item A como 1 e a capacidade de crescimento como 1 -->
+            <div class="item s-1 fg-1">B</div>
+            <div class="item s-1 fg-1">Casa</div>
+            <div class="item s-1 fg-1">D</div>
+            <div class="item s-1 fg-1">E</div>
+        </div>
+
+        <h3>Exemplo de Flex-shrink: 0 /  basis: 100px</h3>
+        <p class="explicacao">Neste exemplo, o item possui a capacidade de redução igual a 0, o que significa que ele não será comprimido quando o container flexível é reduzido.</p>
+        <div class="flex-container">
+            <div class="item s-0 fg-1">A</div>
+            <div class="item s-0 fg-1">B</div>
+            <div class="item s-0 fg-1">C</div>
+            <div class="item s-0 fg-1">D</div>
+            <div class="item s-0 fg-1">E</div>
+        </div>
+
+        <h3>Exemplo de Flex-shrink: 2 e Flex-shrink: 3 / basis: 100px</h3>
+        <p class="explicacao">Neste exemplo, os itens possuem diferentes capacidades de redução (flex-shrink:2) e (flex-shrink:3), mantendo o tamanho inicial de 100px.</p>
+        <div class="flex-container">
+            <div class="item s-1 fg-1">A</div>
+            <div class="item s-2 fg-1">B</div>
+            <div class="item s-2 fg-1">Casamento casa casinha</div>
+            <div class="item s-2 fg-1">D</div>
+            <div class="item s-3 fg-1">E</div>
+        </div>
+    </main>
+</body>
+</html>

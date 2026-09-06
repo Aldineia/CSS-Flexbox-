@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamento - flex basis</title>
+    <style>
+        main{
+            background: rgb(250, 249, 214);
+            padding: 20px; /*Espaço entre a borda e seu conteúdo (texto, flexbox, etc.)*/
+            margin: 15px; /*Espaço FORA da borda (afasta do topo da página e das laterais)*/
+            border: 1px solid #dcdcdc; /*Opcional: Adiciona uma borda visível para ver o efeito*/
+        }
+        h1, h2, p,.items{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p{
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.4;
+        }
+        .explicacao{
+            background-color: #fdfdfd;
+            border-left: 4px solid rgb(224, 186, 17);
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .flex-container{
+            display: flex;
+            max-width: 500px;
+            border: 1px solid black;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 25px;
+        }
+        .items{
+            background-color: chocolate;
+            color: rgb(250, 249, 249);
+            text-align: center;
+            margin: 5pX;
+        }
+        .bauto{
+            flex-basis: auto;
+        }
+        .fg-1{
+            flex-grow: 1;
+        }
+        .fg-2{
+            flex-grow: 2;
+        }
+        .b-0{
+            flex-basis: 0;
+        }
+        .w100{
+            flex-basis:100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> CSS Flexbox</h1>
+    </header>
+
+    <main>
+        <h2>Fundamento flex-basis</h2>
+        <p class="explicacao">
+            A propriedade <b> flex-basis </b>define o tamanho inicial de um item flexível ao longo do eixo principal antes que o espaço livre restante seja distribuído. Seus valores
+            principais são <b>auto</b>, valores de tamanho como <b>px</b> ou <b>%</b> e o <b>0</b>. 
+            
+            <!--Bloco 1 -->
+            <h2>Basis auto</h2>
+            <p class="explicacao">
+                <b>O que acontece aqui:</b> Os itens começam com o tamanho exato de seus textos internos.
+                Como o container tem 500px e as margens somam 40px, sobram 46opx. O navegador calcula o espaço do texto de cada um e divide o que sobra em 5 partes (1+1+1+2).
+                O item <b>DEF</b> ganha o dobro do espaço restante e fica visivelmente maior.
+            </p>
+
+            <div class="flex-container">
+                <div class="items bauto fg-1">A</div>
+                <div class="items bauto fg-1">BB</div>
+                <div class="items bauto fg-1">CCC</div>
+                <div class="items bauto fg-2">DEF</div>
+            </div>
+            
+            <!--Bloco 2-->
+            <h2> 0 (zero)</h2>
+            <p class="explicacao">
+                <b>O que aconteceu aqui:</b> o navegador ignora o tamanho dos textos internos (define a base inicial como 0px).
+                    O espaço total de 460px é dividido estritamente em 4 partes iguais (porque todos são fg-1).
+                    O resultado é que todos os 4 itens ficam exatamente com <b>115px de largura</b>, não importa o tamanho da palavra dentro deles.
+            </p>
+            <div class="flex-container">
+                <div class="items b-0 fg-1">AAAAAAA</div>
+                <div class="items b-0 fg-1">BBB</div>
+                <div class="items b-0 fg-1">C</div>
+                <div class="items b-0 fg-1">DEF</div> 
+            </div>
+            
+            <h2>Basis + width</h2>
+            <p class="explicacao">
+                <b>O que acontece aqui:</b> Cada item força um tamanho inicial de 100px (total 400px).
+                Dos 460px disponíveis, sobram 60px livres. Como todos têm <b>fg-2</b>, esses 60px são divididos igualmente por 4 (15px para cada).
+                Todos terminam com <b>115px fixos</b>.
+
+            </p>
+            <div class="flex-container">
+                <div class="items w100 fg-2">AAA</div>
+                <div class="items w100 fg-2">BBB</div>
+                <div class="items w100 fg-2">CCC</div>
+                <!--Item com flex-shrink: 0 adicionado para testes-->
+                <div class="items w100 fg-0">DEF</div>
+            </div>
+        </main>
+</body>
+</html>

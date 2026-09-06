@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Align-content</title>
+    <style>
+        main{
+            max-width: 800px; /*define a largura máxima do conteúdo principal*/
+            margin: 0 auto; /* centralizar o conteúdo principal horizontalmente*/
+            background-color:bisque; /* define a cor de fundo do conteúdo principal*/
+        }
+        h1 , h2 {
+            text-align:center;/* define o alinhamento do texto como centralizado*/
+            font-style:normal;
+            color:blue
+        }
+        p{
+            text-align:center;
+            font-style:normal;
+            font-size:18px;
+        }
+        .container{
+            height: 400px;/*define a altura do contêiner */
+            max-width: 300px; /* define a largura máxima da caixa*/
+            margin: 0 auto; /* centraliza o container horizontalmente*/
+            display: flex; /*define o container com flexivel */
+            flex-wrap: wrap; /* define que os itens podem quebrar para a próxima linha*/
+            border: 1px solid black; /* define uma borda sólida preta para o container*/
+        }
+        .item{
+            background-color: rgb(236, 92, 56); /* define a cor de fundo dos itens*/
+            padding:0 5px; /* define o preeenchimento interno dos itens*/
+            margin: 5px;/*define */
+            flex:1; /* define a propriedade flex para os itens*/
+            text-align: center; /* define o alinhamento do texto dos itens*/
+            color:white;/* define a cor do texto dos itens*/
+            border: 1px solid black; /* define uma borda sólida preta para os itens*/
+        }
+        .stretch{
+            align-content: stretch; /* define o alinhamento das linhas do container como esticado*/
+        }
+        .center{
+            align-content: center; /* define o alinhamento das linhas do container como centralizado*/
+        }
+        .flex-start{
+            align-content:flex-start; /* define o alinhamento das linhas do container como alinhamento no início*/
+        }
+        .flex-end{
+            align-content:flex-end; /*define o alinhamento das linhas do container como alinhamento no final*/
+        }
+        .around{
+        align-content:space-around;/*define o alinhamento das linhas do container como espaçamento ao redor*/
+    }
+    .space-between{
+        align-content:space-between; /* define o alinhamento das linhas do container como espaçamento entre as linhas*/
+    }
+    </style>
+</head>
+<body>
+    <main>
+
+        <section>
+        <h1>Align-content</h1>
+        <p>É a propriedade responsável por tratar o alinhamento das linhas do container em relação ao eixo vertical do container.</p>
+        </section>
+
+        <h2>Stretch</h2>
+        <p>(Padrão) Alinha as linhas de forma que elas ocupem todo o espaço disponivel no container, esticando-as para preencher o espaço.</p>
+        <div class="container stretch">
+            <div class="item">O funcionament e os dele</div>
+            <div class="item">O funcio pai  filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O   e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcionamento isplay: flex e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">(os itens que ficam dentro dele)</div>
+            <div class="item">O funcion entre os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai (o contêiner  flex) e os elementos filhos (os itens que ficam dentro dele)</div>
+        </div>
+
+        <h2>Center</h2>
+        <p>Junta todas as linhas do container e as centraliza verticalmente dentro.</p>
+        <div class="container center">
+            <div class="item">O funcio pe os elementos filhos </div>
+            <div class="item">O funcio pai (o contêiner  flex) e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai (o contêiner  flex) e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai (o contêiner  flex) e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai (o contêiner  flex) e os elementos filho</div>
+            <div class="item">O funcio pai (o contêiner  flex) e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai (o contêiner  flex) e os elementos filhos</div>
+            </div>
+
+        <h2>Flex-start</h2>
+        <p>Empurra todas as linhas para o topo do container, deixando o espaço vazio embaixo.</p>
+        <div class="container flex-start">
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+        </div>
+
+        <h2>Flex-end</h2>
+        <p>Empurra todas as linhas para a base do container, deixando o espaç vazio em cima.</p>
+        <div class="container flex-end">
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  elementos filhos (os itens que ficam dentro dele)</div>
+        </div>
+
+        <h2>Space-around</h2>
+        <p>Distribui as linhas deixando espaco iguais em torno de cada linha, ou seja, o espaço entre as linhas é o mesmo que o espaço entre a primeira linha e o topo do container e o espaço entre a útilma linha e a base do container.</p>
+        <div class="container around">
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+        </div>
+
+        <h2>Space-between</h2>
+        <p>Cola a primeira linha no topo do container, a última linha na base do container e distribui o espaço restante apenas entre as linhas do meio.</p>
+        <div class="container space-between">
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai  e os elementos filhos (os itens que ficam dentro dele)</div>
+            <div class="item">O funcio pai (o contêiner  flex) e os elementos filhos (os itens que ficam dentro dele)</div>
+        </div>
+    </main>
+
+
+</body>
+</html>

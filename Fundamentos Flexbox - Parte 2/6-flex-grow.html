@@ -1,0 +1,106 @@
+<!--Estrutura Base do HTML5-->
+
+<!DOCTYPE html> <!--Informa ao navegador que o documento é HTML5-->
+<html lang="pt-br"> <!--Abri o documentoHTML e define o idioma como português brasileiro-->
+<head> <!--Inicia o cabeçalho do arquivo, onde ficam os metadados e configurações internas que não aparecem diretamente na tela do usiário-->
+    <meta charset="UTF-8"><!-- Define a codificação de caracteres como UTF-8, garantindo a exibição de acentos e símbolos-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Configura a janela de visualização do navegador para tornar o site responsivo em dispositivos móveis-->
+    <title>Fundamentos Flex- Grow</title><!-- Define o título que aparec na aba do navegador-->
+
+<!--Estilização (CSS) do documento HTML5--> 
+
+    <style> /*Início do bloco de código CSS interno para estilizar os elemnetos da página*/
+        main{
+            max-width: 800px;
+            padding: 30px;
+            margin: 0 auto;
+            background-color: rgb(200, 243, 229);
+        }
+        .flex-container{ /* Abre as regras de estilo para a classe aplicada aos elementos pais (containers).*/
+            display: flex; /*Transforma o elemento em um container flexível, ativando as propriedades do CSS Flexbox.*/
+            border: 2px solid black;/* Adiciona uma borda preta sólida com 2 pixels de espessura ao redor do container*/
+            max-width:300px;/*Dfenie a largura máxima do container em 300pixels.*/
+            margin-bottom: 20px; /*Adiciona uma margem de 20p0ixels na parte inferios do container para separa-lo do proximo elemento.*/
+            justify-content:center; /* Alinhar os itens flexíveis no centro do container ao longo do eixo horizontal (principal)*/
+        } /* Fecha o bloco de estilo da classe .flex-container*/
+
+        .item{ /* Abre as regras de estilo para a classe dos elementos filhos (itens internos)*/
+            background-color: #e08216; /*Aplica uma cor de fundo laranja so itens internos do container*/
+            margin:5px; /* Cria uma margem externa de 5 pixels em todos os lados de cada item.*/
+            padding: 10px; /*Adiciona um espaço interno de 10 pixels ente o texto e a borda*/
+            text-align: center;/* Centraliza o texto horizontalmento  dentro do item.*/
+            color: white; /*Define a cor do texto como branco*/
+        } /* Fecha o bloco de estilo da classe .item*/
+
+
+        .fg-0{   /*Classe que define que o item não vai esticar para ocupar o espaço vazio do container (Comportamento Padrão).*/
+            flex-grow:0;
+        }
+        .fg-1{
+            flex-grow:1; /* Classe que permite ao item esticar proprocionalmente a 1 parte do espaço dísponivel.*/
+        }
+        .fg-2{
+            flex-grow:2; /* Classe que faz o item crescer o dobro em relação aos itens que possuem flex-grow: 1*/
+        }
+        .fg-3{
+            flex-grow:3; /* Classe que faz o item crescer o triplo em relação aos itens de proporção 1.*/
+        }
+    </style> <!--Encerra o bloco de código CSS--> 
+
+</head><!--Encerra a seção de cabeçalho do documento-->
+
+<main>
+<!--Conteúdo Visível (HTML Body)-->
+
+<body><!--Inicia o corpo do documento, onde fica toda a parte visual que o usuário final consegue ver-->
+    <h1>Flex -Grow</h1>
+    <p>É uma propriedade do CSS  que define quanto um item pode crescer para ocupar o espaço que sobra dentro do container.</p>
+    <p>Por padrão, os elementos ocupam apenas o tamanho do seu próprio conteúdo.</p>
+
+    <h2>Flex Grow 0</h2> <!--Exibe um título secundário indicando o primeiro exemplo-->
+    <p>Padrão da propriedade, o item manterá seu tamanho original.</p>
+    <div class="flex-container fg-0"> <!--Cria o primeiro container flexível-->
+        <div class="item fg-0">A - 0</div> <!--Cria o item "A" dentro do contanier, configurado para não expandir (flex-grow: 0;)-->
+        <div class="item fg-0">B - 0</div><!--Cria o item "B" dentro do contanier, configurado para não expandir (flex-grow: 0;)-->
+        <div class="item fg-0">C - 0</div><!--Cria o item "C" dentro do contanier, configurado para não expandir (flex-grow: 0;)-->
+        <div class="item fg-0">D - 0</div><!--Cria o item "D" dentro do contanier, configurado para não expandir (flex-grow: 0;)-->
+    </div> <!--Fechar o primeiro container flexível-->
+
+    <h2>Flex Grow 1</h2><!--Cria o título do segundo bloco-->
+    <p>Define a capacidade de um elemento "crescer" e ocupar o espaço livre restante dentro do seu contêiner.</p>
+    <div class="flex-container fg-1"> <!--Cria o segundo container-->
+        <div class="item fg-0">A - 1</div>
+        <div class="item fg-1">B - 1</div>
+        <div class="item fg-1">C - 1</div>
+        <div class="item fg-1">D - 1</div>
+    </div>
+
+    <h2>Flex Grow 2</h2>
+    <p>Cresce o dobro da proporção de um item com flex-grow 1.</p>
+    <div class="flex-container fg-2">
+        <div class="item fg-2">A - 2</div>
+        <div class="item fg-2">B - 2</div>
+        <div class="item fg-2">C - 2</div>
+        <div class="item fg-2">D - 2</div>
+    </div>
+
+    <h2>Flex Grow 3</h2>
+    <p>Indica que, ao distribuir o espaço vazio restante, este item específico receberá uma "fatia" 3 vezes maior do que um item que possue flex-grow.</p>
+    <div class="flex-container fg-3">
+        <div class="item fg-3">A - 3</div>
+        <div class="item fg-3">B - 3</div>
+        <div class="item fg-3">C - 3</div>
+        <div class="item fg-3">D - 3</div>
+    </div>
+
+    <h2>Flex -Grow alternados</h2>
+
+    <div class="flex-container">
+        <div class="item fg-0">A - 0</div>
+        <div class="item fg-1">B - - 1</div>
+        <div class="item fg-2">C - -- 2</div>
+        <div class="item fg-3">D - --- 3</div>
+    </div>
+</main>
+</body>
+</html>
