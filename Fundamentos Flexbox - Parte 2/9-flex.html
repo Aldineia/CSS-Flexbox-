@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - flex</title>
+<style>
+.flex-container{/*Define o container como flexível*/
+    display:flex;/*Define o container como flexível*/
+    border:1px solid rgb(136, 136, 138); /*Adiciona uma borda para visualizar o container*/
+    max-width:400px; /*Define a largura máxima do container*/
+    width: 100%; /*Define a largura do container como 100% da largura disponível*/
+    margin-left:auto; /*Centarliza o container horizontalmente*/
+    margin-right:auto; /*Centraliza o container horizontalmente*/
+    margin-bottom: 25px; /*Define a margem inferior do container*/
+}
+.item{/*Define o item como flexível*/
+    background-color:brown; /* Define a cor de fundodo item*/
+    color: white; /* Define a cor do texto do item*/
+    font-size: 24px; /* Define o tamanho da fonte do item*/
+    text-align:center;/*Alinha o texto no centro do item*/
+    margin: 5px; /*Define a margem do item*/
+
+} 
+main{/*Define o elemento principal da página*/
+    background: rgb(243, 220, 220); /*Define a cor de fundo do elemento principal*/
+    padding: 20px; /*Define o espaçamento interno do elemento principal*/
+    margin: 15px; /* Define a margem do elemento principal*/
+    border: 1px solid rgb(185, 182, 182)
+}
+h1, h2, h3,p,.item{ /*Define a formatação do texto*/
+    font-family:Arial, Helvetica, sans-serif; /*Define a fonte do texto*/
+    text-align: center;/*Alinha o texto ao centro*/
+}
+p{/*Define a formatação do paragrafo*/
+    max-width:600px; /*Define a largura máxima do paragrafo*/
+    margin-left:auto; /*Centralia o paragrafo horizontalmente*/
+    margin-right:auto; /*Centraliza o paragrafo horizontalmente*/
+    font-size: 17px; /*Define o tamanho da fonte do paragrafo*/
+    color:rgb(50, 50, 51);/*Define a cor do texto do paragrafo*/
+    line-height: 1.5; /*Define a altura da linha do paragrafo*/
+    text-align:justify
+}
+.explicacao{
+    background-color: white; /*Define a cor de fundo do paragrafo explicativo*/
+    border-left: 4px solid rgb(189, 185, 243); /*Define a borda esquerda do páragrafo explicação*/
+    padding: 10px; /*Define o espaçamento interno do paragrsafo explicativo*/
+    margin-bottom: 20px; /*Define a margem inferior do paragrafo explicativo*/
+}
+.flex-1{
+    flex:1; /*Define a capacidade de crescimento do item*/
+            /*grow = 1, shrink = 1, basis = 0%*/
+}
+.flex-2{
+    flex:2; /*Define a capacidade de crscimento do item*/
+}
+
+/*Responsividade (Media Query)*/
+@media (max-width:500px){ /*Define a regra de mídia para telas com largura máxima de 500px*/
+        .flex-container{ /*Define container como flexível*/
+            flex-direction:column; /*Define a direção dos itens do container como coluna*/
+            align-items:stretch; /*Define o alinhamento dos itens do container como esticado*/
+            min-height:auto; /*Define a altura mínima do container como automática*/
+        }
+    }
+</style>
+</head>
+<body>
+    <h1 >Fundamentos - Flexbox</h1>
+<main>
+
+
+    <h2 >Flex</h2>
+    <p>Esta propriedade é um atalho ou abreviação de escrita para as propriedade:<b>grow, </b><b>shrink</b> e <b>basis.</b></p>
+
+
+<div class="explicacao">
+    <h3 >flex-1</h3>
+    <p>O <b>valor 1</b> para a propriedade <b>flex</b> significa que o item pode crescer e encolher igualmente em relação aos outros itens do container flexível. O valor 1 para <b>grow</b> indica que o item pode crescer para ocupar espaço adicional disponível no container, enquanto o valor 1 para <b>shrink</b> indica que o item pode encolher para ajustar-se ao espaço disponível no container.</p>
+    <div class="flex-container">
+        <div class="item flex-1">A</div>
+        <div class="item flex-1">BBB</div>
+        <div class="item flex-1">CC</div>
+        <div class="item flex-1">D</div>
+        <div class="item flex-1">EF</div>
+    </div>
+</div>
+
+<div class="explicacao">
+    <h3>flex-2</h3>
+    <p>O<b> valor 2 </b> para a propriedade <b>flex</b> significa que o item pode crescer e encolher <b>duas vezes</b> mais em relação aos outros itens do container flexível. O <b>valor 2 </b> para <b>grow</b> indica que o item pode crescer para ocupar espaço adicional disponível no container, enquantoo <b>valor 2</b> para <b>shrink</b> indica que o item pode encolher para ajustar-se ao espaço disponível no container.</p>
+    <div class="flex-container">
+        <div class="item flex-2">A</div>
+        <div class="item flex-2">BBB</div>
+        <div class="item flex-2">CC</div>
+        <div class="item flex-2">D</div>
+        <div class="item flex-2">EF</div>
+    </div>
+</div>
+
+<div class="explicacao">
+    <h3>flex-mix</h3>
+    <p>Quando os itens do container flexível têm diferentes valores para a propriedade <b>flex</b>, eles podem crescer e encolher em proporções diferentes. Por exemplo, se um item tem <b>flex: 1</b> e outro item tem <b>flex: 2</b>, o segundo item terá o dobro da capacidade de crescimento e encolhimento em relação ao primeiro item.</p>
+    <div class="flex-container">
+        <div class="item flex-1">A</div>
+        <div class="item flex-2">BBB</div>
+        <div class="item flex-1">CC</div>
+        <div class="item flex-2">D</div>
+        <div class="item flex-1">EF</div>
+    </div>
+</div>
+</main>
+</body>
+</html>
+
